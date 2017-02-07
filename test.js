@@ -28,6 +28,11 @@ describe('sumOfArray()', function(){
 	})
 })
 describe('maxOfArray()', function(){
+	it('should output a number if the array is not empty, else null', function() {
+		checkFuncBasics('maxOfArray',1)
+		expect(maxOfArray([5,10,2])).to.be.a('number')
+		expect(maxOfArray([])).to.be.null
+	})
 	it('should return the highest number of an array', function(){
 		checkFuncBasics('maxOfArray',1)
 		assert.equal(4, maxOfArray([2, 4, 3]))
