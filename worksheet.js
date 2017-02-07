@@ -4,10 +4,30 @@
  * Write a function that calculates the sum of all the numbers in an array
  */
 
+
+ var sumOfArray = function(numArray) {
+ 	var sum = 0
+ 	for (var i = 0; i < numArray.length; i++) {
+ 		sum = sum + numArray[i]
+ 	}
+ 	return sum
+ }
+
 // PART 1
 
 // Write a function maxOfArray() that takes an array of
 // numbers as an argument and returns the highest number in the array.
+
+var maxOfArray = function(numArray) {
+	var max = numArray[0]
+	for (var i = 0; i < numArray.length; i++) {
+		var currentNum = numArray[i]
+		if (max < currentNum) {
+			max = numArray[i]
+		}
+	}
+	return max
+}
 
 
 /**
@@ -17,6 +37,15 @@
  * as input and returns true if it is a vowel, false otherwise.
  */
 
+var isVowel = function(character) {
+	var vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
+	for (var i = 0; i < vowels.length; i++) {
+		if (character === vowels[i]) {
+			return true
+		}
+	}
+	return false
+}
 
 /**
  * Part 3
@@ -26,6 +55,14 @@
  * reverse("skoob") should return the
  * string "books".
  */
+
+ var reverse = function(string) {
+    var reversedString = ''
+    for (var i = string.length -1; i >=0; i--) {
+        reversedString = reversedString + string[i]
+    }
+    return reversedString
+}
 
 
 /**
@@ -42,6 +79,24 @@
  For the number 15, the fizzbuzz string is "..fizz.buzzfizz..fizzbuzz.fizz..fizzbuzz"
  */
 
+var fizzbuzz = function(num) {
+    var fizzbuzzStr = ""
+    for (var i = 1; i <= num; i++) {
+        if (i % 3 !== 0 && i % 5 !== 0) {
+            fizzbuzzStr += "."
+        }
+        if (i % 3 === 0 && i % 5 !== 0) {
+            fizzbuzzStr += "fizz"
+        }
+        if (i % 3 !== 0 && i % 5 === 0) {
+            fizzbuzzStr += "buzz"
+        }
+        if (i % 3 === 0 && i % 5 === 0) {
+            fizzbuzzStr += "fizzbuzz"
+        }
+    }
+    return fizzbuzzStr
+}
 
 /**
  * Part 5

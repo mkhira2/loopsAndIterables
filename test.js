@@ -54,7 +54,7 @@ describe('Function', function() {
 	})
 	describe('#fizzbuzz()', function(){
 		it('should meet the standards listed in Part 4 instructions', function(){
-			checkFuncBasics('fizzbuzz',2)
+			checkFuncBasics('fizzbuzz',1)
 			assert.equal(".", fizzbuzz(1))
 			assert.equal("..", fizzbuzz(2))
 			assert.equal("..fizz", fizzbuzz(3))
