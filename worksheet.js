@@ -19,10 +19,12 @@
 // numbers as an argument and returns the highest number in the array.
 
 var maxOfArray = function(numArray) {
-	var max = numArray[0]
+	var max = 0
+    if (numArray.length === 0) {
+        return null
+    }
 	for (var i = 0; i < numArray.length; i++) {
-		var currentNum = numArray[i]
-		if (max < currentNum) {
+		if (max < numArray[i]) {
 			max = numArray[i]
 		}
 	}
@@ -57,7 +59,7 @@ var isVowel = function(character) {
  */
 
  var reverse = function(string) {
-    var reversedString = ''
+    var reversedString = ""
     for (var i = string.length -1; i >=0; i--) {
         reversedString = reversedString + string[i]
     }
@@ -106,6 +108,17 @@ var fizzbuzz = function(num) {
  * i.e. findLongestWord("a book full of dogs") should return "book"
  */
 
+var findLongestWord = function(sentence) {
+    var longestWord = ""
+    var wordsArray = sentence.split(" ")
+    for (var i = 0; i < wordsArray.length; i++) {
+        if (longestWord.length < wordsArray[i].length) {
+            longestWord = wordsArray[i]
+        }
+    }
+    return longestWord;
+}
+
 
 /**
  * PART 6
@@ -113,4 +126,13 @@ var fizzbuzz = function(num) {
  * write a function that returns the Greatest Common Denominator of two numbers
  * - if no GCD exists, return 1
  */
+
+ var GCD = function(num1, num2) {
+    for (var i = num1; i > 0; i--) {
+        if (num1 % i === 0 && num2 % i === 0) {
+            return i
+        }
+    }
+    return 1
+}
 

@@ -33,6 +33,7 @@ describe('maxOfArray()', function(){
 		expect(maxOfArray([5,10,2])).to.be.a('number')
 		expect(maxOfArray([])).to.be.null
 	})
+	
 	it('should return the highest number of an array', function(){
 		checkFuncBasics('maxOfArray',1)
 		assert.equal(4, maxOfArray([2, 4, 3]))
@@ -48,6 +49,7 @@ describe('isVowel()', function(){
 		assert.equal(true, isVowel("a"))
 		assert.equal(true, isVowel("E"))
 	})
+})
 describe('reverse()', function(){
 	it('should return the reversal of an input string', function(){
 		checkFuncBasics('reverse',1)
