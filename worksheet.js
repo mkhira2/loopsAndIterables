@@ -5,13 +5,13 @@
  */
 
 
- var sumOfArray = function(numArray) {
- 	var sum = 0
- 	for (var i = 0; i < numArray.length; i++) {
- 		sum = sum + numArray[i]
- 	}
- 	return sum
- }
+var sumOfArray = function(numArray) {
+    var sum = 0                                     // initialize sum to 0
+    for (var i = 0; i < numArray.length; i++) {     // iterate through input numbers
+        sum += numArray[i]                          // add each index to sum
+    }
+    return sum
+}
 
 // PART 1
 
@@ -19,16 +19,16 @@
 // numbers as an argument and returns the highest number in the array.
 
 var maxOfArray = function(numArray) {
-	var max = 0
-    if (numArray.length === 0) {
-        return null
+    var max = 0                                     // initialize max to 0
+    if (numArray.length === 0) {                    // if input array is 0,
+        return null                                 // return null
     }
-	for (var i = 0; i < numArray.length; i++) {
-		if (max < numArray[i]) {
-			max = numArray[i]
-		}
-	}
-	return max
+    for (var i = 0; i < numArray.length; i++) {     // otherwise, iterate through array of input numbers
+        if (max < numArray[i]) {                    // and if the max is less than the current index,
+            max = numArray[i]                       // make max the current index
+        }
+    }
+    return max
 }
 
 
@@ -40,13 +40,13 @@ var maxOfArray = function(numArray) {
  */
 
 var isVowel = function(character) {
-	var vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
-	for (var i = 0; i < vowels.length; i++) {
-		if (character === vowels[i]) {
-			return true
-		}
-	}
-	return false
+    var vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u'] // create array of vowel characters
+    for (var i = 0; i < vowels.length; i++) {                       // iterate through array of vowels
+        if (character === vowels[i]) {                              // if the input char matches a vowel,
+            return true                                             // it's true
+        }
+    }
+    return false                                                    // otherwise it's false
 }
 
 /**
@@ -58,10 +58,10 @@ var isVowel = function(character) {
  * string "books".
  */
 
- var reverse = function(string) {
-    var reversedString = ""
-    for (var i = string.length -1; i >=0; i--) {
-        reversedString = reversedString + string[i]
+var reverse = function(string) {
+    var reversedString = ""                             // create an empty string to store reversed
+    for (var i = string.length - 1; i >= 0; i--) {      // iterate backwards through input string
+        reversedString = reversedString + string[i]     // add each index to reversed string
     }
     return reversedString
 }
@@ -109,14 +109,14 @@ var fizzbuzz = function(num) {
  */
 
 var findLongestWord = function(sentence) {
-    var longestWord = ""
-    var wordsArray = sentence.split(" ")
-    for (var i = 0; i < wordsArray.length; i++) {
-        if (longestWord.length < wordsArray[i].length) {
-            longestWord = wordsArray[i].replace(/'/g,'')
+    var longestWord = ""                                    // create empty string to store longest word
+    var wordsArray = sentence.split(" ")                    // turn input sentence into array so we can iterate
+    for (var i = 0; i < wordsArray.length; i++) {           // iterate through array of words from input sentence
+        if (longestWord.length < wordsArray[i].length) {    // if the current index is longer than our longest word
+            longestWord = wordsArray[i].replace(/'/g, '')   // make the longest word the current index word, ignoring apostrophes
         }
     }
-    return longestWord;
+    return longestWord
 }
 
 
@@ -127,12 +127,11 @@ var findLongestWord = function(sentence) {
  * - if no GCD exists, return 1
  */
 
- var GCD = function(num1, num2) {
-    for (var i = num1; i > 0; i--) {
-        if (num1 % i === 0 && num2 % i === 0) {
-            return i
+var GCD = function(num1, num2) {
+    for (var i = num1; i > 0; i--) {            // begin iterating backwards from an input number
+        if (num1 % i === 0 && num2 % i === 0) { // as soon as both input numbers are divisible by i,
+            return i                            // return i
         }
     }
-    return 1
+    return 1                                    // otherwise, return 1
 }
-
