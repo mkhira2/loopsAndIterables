@@ -71,6 +71,9 @@ var reverse = function(string) {
     return reversedString
 }
 
+var newReverse = string => string.split('').reduce((state, value) => {
+    return value + state
+});
 
 /**
  * Part 4
@@ -105,6 +108,8 @@ var fizzbuzz = function(num) {
     return fizzbuzzStr
 }
 
+// TODO: make newFizzbuzz program
+
 /**
  * Part 5
  *
@@ -124,6 +129,14 @@ var findLongestWord = function(sentence) {
     return longestWord
 }
 
+var newFindLongestWord = sentence => {
+    const stringArray = sentence.split(' ');
+    const longestWord = stringArray.reduce((a, b) => {
+        return (b.length > a.length) ? b : a;
+    });
+    return longestWord;
+};
+
 
 /**
  * PART 6
@@ -139,4 +152,11 @@ var GCD = function(num1, num2) {
         }
     }
     return 1                                    // otherwise, return 1
+}
+
+var newGCD = (num1, num2) => {
+    if (!num2) {
+        return num1
+    }
+    return newGCD(num2, num1 % num2);
 }
