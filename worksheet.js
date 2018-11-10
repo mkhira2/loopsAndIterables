@@ -13,6 +13,8 @@ var sumOfArray = function(numArray) {
     return sum
 }
 
+var newSumOfArray = numArray.reduce((a, b) => a + b, 0);
+
 // PART 1
 
 // Write a function maxOfArray() that takes an array of
@@ -31,6 +33,7 @@ var maxOfArray = function(numArray) {
     return max
 }
 
+var newMaxOfArray = numArray => Math.max.apply(null, numArray)
 
 /**
  * PART 2
@@ -48,6 +51,8 @@ var isVowel = function(character) {
     }
     return false                                                    // otherwise it's false
 }
+
+var newIsVowel = x => /[aeiouAEIOU]/.test(x);
 
 /**
  * Part 3
@@ -70,7 +75,7 @@ var reverse = function(string) {
 /**
  * Part 4
  *
- * write a function the returns a fizzbuzz string for an input number. 
+ * write a function the returns a fizzbuzz string for an input number.
  A fizzbuzz string is defined as the following:
  For every number from 1 to the input number...
  * - if that number isn't a multiple of 3 or 5, add a period "." to the fizzbuzz string
@@ -103,7 +108,7 @@ var fizzbuzz = function(num) {
 /**
  * Part 5
  *
- * Write a function findLongestWord() that takes a string of 
+ * Write a function findLongestWord() that takes a string of
  words and returns the longest word.
  * i.e. findLongestWord("a book full of dogs") should return "book"
  */
